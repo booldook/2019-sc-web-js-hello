@@ -1,0 +1,36 @@
+<script>
+var a;
+a = 1;
+var b = 2;
+var c = "홍길동";
+var d = c;
+var world;
+
+function multi() {
+	alert("실행되었습니다.");
+}
+
+// console.log(a, b);
+
+a = 10;
+b = 20;
+
+// 리턴값이 있는 함수
+function hap() {
+	return c = a + b;
+}
+
+// 리턴값이 없는 함수
+function hap2() {
+	c = a + b;
+}
+
+// console.log(a, b, hap2());
+
+function hap3(x, y) {
+	var z = x + y;
+	return z;
+}
+
+console.log(hap3(50, 100));
+</script>

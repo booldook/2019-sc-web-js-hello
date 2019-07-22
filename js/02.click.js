@@ -1,9 +1,11 @@
+
+
 $("#btMake").click(function (){
-	//alert("Hello World");
 	var userName = $("#userName").val();
-	$(".list-group").append('<li class="list-group-item">' + userName + '</li>');
+	var listItem = '<li class="list-group-item">' + userName + '</li>';
+	$(".list-group").append(listItem);
 });
 
-$("#btReset").click(function() {
+$("#btReset").click(function (){
 	$(".list-group").empty();
 });

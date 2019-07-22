@@ -4,4 +4,6 @@ th, td {vertical-align: middle !important;}
 
 .text-primary {color: #061e5f !important;}
 .form-group {margin-bottom: 0;}
+.pointer {cursor: pointer;}
+.justify-content-evenly {justify-content: space-evenly;}
 /* .btn {border-radius: 0;} */

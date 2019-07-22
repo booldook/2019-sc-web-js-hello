@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,12 +15,16 @@
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/wow.min.js"></script>
 	<style>
-	.box {width: 200px; height: 200px;}
+		.box {
+			width: 200px;
+			height: 200px;
+		}
 	</style>
 </head>
+
 <body>
-	<div class="container">
-		<div class="alert alert-dark my-3 p-3">
+	<div class="container pt-5">
+		<div class="alert alert-dark my-5 p-3">
 			<h3>jQuery Animation</h3>
 		</div>
 		<div class="text-center my-3">
@@ -44,6 +49,44 @@
 			<div class="box bg-success" id="box3"></div>
 		</div>
 	</div>
+	<nav class="navbar navbar-dark bg-dark fixed-top">
+		<a class="navbar-brand text-light">상단 네비게이션</a>
+		<ul class="d-flex text-light">
+			<li class="navi mr-5 pointer position-relative">
+				Information
+				<ul class="position-absolute bg-dark" style="width: 120px;">
+					<li class="py-2 px-4">sub 1</li>
+					<li class="py-2 px-4">sub 2</li>
+					<li class="py-2 px-4">sub 3</li>
+				</ul>
+			</li>
+			<li class="navi mr-5 pointer position-relative">
+				Products
+				<ul class="position-absolute bg-dark" style="width: 120px;">
+					<li class="py-2 px-4">sub 1</li>
+					<li class="py-2 px-4">sub 2</li>
+					<li class="py-2 px-4">sub 3</li>
+				</ul>
+			</li>
+			<li class="navi mr-5 pointer position-relative">
+				Our Plan
+				<ul class="position-absolute bg-dark" style="width: 120px;">
+					<li class="py-2 px-4">sub 1</li>
+					<li class="py-2 px-4">sub 2</li>
+					<li class="py-2 px-4">sub 3</li>
+				</ul>
+			</li>
+			<li class="navi pointer position-relative">
+				Community
+				<ul class="position-absolute bg-dark" style="width: 120px;">
+					<li class="py-2 px-4">sub 1</li>
+					<li class="py-2 px-4">sub 2</li>
+					<li class="py-2 px-4">sub 3</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
 	<script src="../js/03.ani.js"></script>
 </body>
+
 </html>

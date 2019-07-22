@@ -1,9 +1,13 @@
 /* 
 "slow", "fast", 2000(ms)
 jQuery animation 3총사
- - hide/show/toggle()
- - fadeIn/fadeOut/fadeToggle()
- - slideIn/slideOut/slideToggle()
+	- hide/show/toggle()
+	- fadeIn/fadeOut/fadeToggle()
+	- slideIn/slideOut/slideToggle()
+
+jQuery class 다루기 (클래스명에 .은 생략)
+	- addClass("클래스명 [클래스명 ...]");
+	- removarClass("클래스명 [클래스명 ...]");
 */
 
 $("#btShow").click(function(){
@@ -68,4 +72,16 @@ $(".navi").mouseover(function(){
 
 $(".navi").mouseleave(function(){
 	$(this).children("ul").stop().slideUp(500);
+});
+
+
+// 세로형 네비게이션 .vtc-nav
+$(".vtc-nav").hover(function(){
+	// mouseover
+	$(this).addClass("bg-secondary text-light");
+	$(this).children("ul").stop().slideDown(300);
+}, function(){
+	// mouseleave
+	$(this).removeClass("bg-secondary text-light");
+	$(this).children("ul").stop().slideUp(300);
 });

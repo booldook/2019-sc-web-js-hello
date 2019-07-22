@@ -55,3 +55,13 @@ $("#btSlideToggle").click(function(){
 	$("#box2").stop().slideToggle(500);
 	$("#box3").stop().slideToggle(500);	
 });
+
+
+// 네비게이션
+$(".navi").mouseover(function(){
+	$(this).children("ul").stop().slideDown(500);
+});
+
+$(".navi").mouseleave(function(){
+	$(this).children("ul").stop().slideUp(500);
+});

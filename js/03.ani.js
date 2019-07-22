@@ -1,5 +1,9 @@
 /* 
 "slow", "fast", 2000(ms)
+jQuery animation 3총사
+ - hide/show/toggle()
+ - fadeIn/fadeOut/fadeToggle()
+ - slideIn/slideOut/slideToggle()
 */
 
 $("#btShow").click(function(){

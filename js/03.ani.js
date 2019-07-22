@@ -51,7 +51,7 @@ $("#btSlideDown").click(function(){
 });
 
 $("#btSlideToggle").click(function(){
-	$("#box1").stop().slideToggle(2000);
-	$("#box2").stop().slideToggle(2000);
-	$("#box3").stop().slideToggle(2000);	
+	$("#box1").stop().slideToggle(500);
+	$("#box2").stop().slideToggle(500);
+	$("#box3").stop().slideToggle(500);	
 });

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>jQuery 애니메이션</title>
+	<link rel="stylesheet" href="../css/fa.min.css">
+	<link rel="stylesheet" href="../css/animate.css">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/base-bootstrap.css">
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/wow.min.js"></script>
+	<style>
+	.box {width: 200px; height: 200px;}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="alert alert-dark my-3 p-3">
+			<h3>jQuery Animation</h3>
+		</div>
+		<div class="text-center my-3">
+			<button class="btn btn-primary" id="btShow">show()</button>
+			<button class="btn btn-danger" id="btHide">hide()</button>
+			<button class="btn btn-success" id="btToggle">toggle()</button>
+		</div>
+		<div class="text-center my-3">
+			<button class="btn btn-primary" id="btFadeIn">fadeIn()</button>
+			<button class="btn btn-danger" id="btFadeOut">fadeOut()</button>
+			<button class="btn btn-success" id="btFadeToggle">fadeToggle()</button>
+		</div>
+		<div class="text-center my-3">
+			<button class="btn btn-primary" id="btSlideUp">slideUp()</button>
+			<button class="btn btn-danger" id="btSlideDown">slideDown()</button>
+			<button class="btn btn-success" id="btSlideToggle">slideToggle()</button>
+		</div>
+		<div class="stage border border-primary rounded my-3 p-3 
+		d-flex justify-content-around">
+			<div class="box bg-primary" id="box1"></div>
+			<div class="box bg-danger" id="box2"></div>
+			<div class="box bg-success" id="box3"></div>
+		</div>
+	</div>
+	<script src="../js/03.ani.js"></script>
+</body>
+</html>

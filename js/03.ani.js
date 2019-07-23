@@ -118,3 +118,19 @@ $("#bt-ani1").click(function(){
 		//alert("Animation이 완료되었습니다.");
 	});
 });
+
+$("#bt-ani2").click(function(){
+	$("#box-ani2").stop().animate({
+		"opacity": 0
+	}, 500, function(){
+		$(this).css({"overflow": "hidden", "opacity": 1});
+		$(this).children("div").stop().animate({
+			"font-size": "2rem",
+			"opacity": 1
+		}, 1000, function(){
+			$(this).stop().animate({
+				"font-size": "1rem"
+			}, 500);
+		});
+	});
+});

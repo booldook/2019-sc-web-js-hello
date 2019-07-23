@@ -120,17 +120,10 @@ $("#bt-ani1").click(function(){
 });
 
 $("#bt-ani2").click(function(){
-	$("#box-ani2").stop().animate({
-		"opacity": 0
-	}, 500, function(){
-		$(this).css({"overflow": "hidden", "opacity": 1});
-		$(this).children("div").stop().animate({
-			"font-size": "2rem",
-			"opacity": 1
-		}, 1000, function(){
-			$(this).stop().animate({
-				"font-size": "1rem"
-			}, 500);
+	$("#box-ani2").stop().animate({"opacity":0}, 1000, function(){
+		$(this).css({"opacity": 1});
+		$(this).children("div").stop().animate({"font-size": "2rem", "opacity": 1}, 500, function(){
+			$(this).stop().animate({"font-size": "1rem"}, 300);
 		});
 	});
 });

@@ -13,7 +13,6 @@ $(".fa-bars").mouseenter(function(){
 
 $(".fa-bars").on("mouseleave", leaveFn);
 $(".fa-times").on("click", leaveFn);
-
 function leaveFn(){
 	$(".fa-bars").css({"color": "#f9f9f9"});
 	$(".navi-bg").stop().animate({"width": 0, "height": 0}, 200, function(){

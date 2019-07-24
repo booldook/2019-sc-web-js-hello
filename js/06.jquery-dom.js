@@ -35,6 +35,9 @@
 	- $(객체).parent()						=> 객체의 부모를 리턴한다.
 	- $(객체).chidren("선택자")		=> 객체의 자식중 선택자를 선택한다.
 	- $(객체).find("선택자")			=> 객체의 자손중 선택자를 선택한다.
+	- $(객체).next()							=> 객체의 다음 형제를 선택한다.
+	- $(객체).prev()							=> 객체의 이전 형제를 선택한다.
+	- $(객체).eq(3)								=> 객체들 중 번호번째(번호는 0부터 시작) 객체를 선택한다.
 */
 
 $("#btAppend").click(function(){
@@ -63,4 +66,11 @@ $("#btEmpty").click(function(){
 
 $("#btRemove").click(function(){
 	$(".box-new").remove();
+});
+
+$("#btEq").click(function(){
+	$(".box-new").eq(0).append('<span class="ml-3">eq(0)</span>');
+	$(".box-new").eq(1).append('<span class="ml-3">eq(1)</span>');
+	$(".box-new").eq(2).append('<span class="ml-3">eq(2)</span>');
+	$(".box-new").eq(3).append('<span class="ml-3">eq(3)</span>');
 });

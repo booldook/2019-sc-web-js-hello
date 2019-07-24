@@ -14,30 +14,47 @@
 	- $(객체).hide() | $(객체).show() | $(객체).toggle() ...
 	- $(객체).stop().animate({css값}, [속도], [ease], [function(){}])
 
+3. jQuery의 css 다루기
+	- $(객체).css({"css속성":"값", "css속성":"값"});
+	- $(객체).css("css속성", "값");
+	- $(객체).addClass("클래스명")		=> 객체에 클래스를 더한다.
+	- $(객체).removeClass("클래스명") => 객체에 클래스를 삭제한다.
+	- $(객체).hasClass("클래스명")    => 객체가 클래스를 가지고 있으면 true, 아니면 false를 리턴한다.
+
 오늘(19.07.24) 배울내용
-3. jQuery의 DOM(Document Object Model) 관련 함수(메서드)
+4. jQuery의 DOM(Document Object Model) 관련 함수(메서드)
 	- $(객체).append('태그내용')    => 객체 안에서 맨 뒤에 태그내용을 추가
 	- $(객체).prepend('태그내용')   => 객체 안에서 맨 앞에 태그내용을 추가
 	- $('태그내용').appendTo(객체)  => 객체 안에서 맨 뒤에 태그내용을 추가
 	- $('태그내용').prependTo(객체) => 객체 안에서 맨 앞에 태그내용을 추가
+	- $(객체).empty()   => 객체 안의 모든 내용을 지운다.
+	- $(객체).remove()  => 객체를 지운다.
 */
 
 $("#btAppend").click(function(){
-	$(".stage").append('<div class="p-3 bg-danger" style="opacity: 0;">append();</div>');
+	$(".stage").append('<div class="box-new p-3 bg-danger" style="opacity: 0;">append();</div>');
 	$(".stage > :last-child").stop().animate({"opacity": 1}, 1000);
 });
 
 $("#btAppendTo").click(function(){
-	var $div = $('<div class="p-3 bg-danger" style="opacity: 0;">appendTo();</div>').appendTo(".stage");
+	var $div = $('<div class="box-new p-3 bg-danger" style="opacity: 0;">appendTo();</div>').appendTo(".stage");
 	$div.stop().animate({"opacity": 1}, 1000);
 });
 
 $("#btPrepend").click(function(){
-	var r = $(".stage").prepend('<div class="p-3 bg-success">prepend();</div>');
+	var r = $(".stage").prepend('<div class="box-new p-3 bg-success">prepend();</div>');
 	console.log(r);
 });
 
 $("#btPrependTo").click(function(){
-	var r = $('<div class="p-3 bg-success">prependTo();</div>').prependTo(".stage");
+	var r = $('<div class="box-new p-3 bg-success">prependTo();</div>').prependTo(".stage");
 	console.log(r);
+});
+
+$("#btEmpty").click(function(){
+	$(".stage").empty();
+});
+
+$("#btRemove").click(function(){
+	$(".box-new").remove();
 });

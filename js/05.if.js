@@ -34,6 +34,9 @@ else if(조건3) {
 else {
 	그 외의 경우
 }
+
+삼항연산자
+조건 ? 참일경우 실행문 : 거짓일 경우 실행문
 */
 
 // alert("Hello");
@@ -71,5 +74,16 @@ $("#bt3").click(function(){
 	=> 객체가 클래스를 가지고 있으면 true
 	=> 객체가 클래스를 가지고 있지 않으면 false
 	*/
-	
+	/*
+	if($(".box").hasClass("d-none")) {
+		$(".box").removeClass("d-none");
+	}
+	else {
+		$(".box").addClass("d-none");
+	}
+	// 실행문이 한줄일 경우 {} 생략 가능
+	if($(".box").hasClass("d-none")) $(".box").removeClass("d-none");
+	else $(".box").addClass("d-none");
+	*/
+	$(".box").hasClass("d-none") ? $(".box").removeClass("d-none") : $(".box").addClass("d-none");
 });

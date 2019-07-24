@@ -21,3 +21,23 @@
 	- $('태그내용').appendTo(객체)  => 객체 안에서 맨 뒤에 태그내용을 추가
 	- $('태그내용').prependTo(객체) => 객체 안에서 맨 앞에 태그내용을 추가
 */
+
+$("#btAppend").click(function(){
+	$(".stage").append('<div class="p-3 bg-danger" style="opacity: 0;">append();</div>');
+	$(".stage > :last-child").stop().animate({"opacity": 1}, 1000);
+});
+
+$("#btAppendTo").click(function(){
+	var $div = $('<div class="p-3 bg-danger" style="opacity: 0;">appendTo();</div>').appendTo(".stage");
+	$div.stop().animate({"opacity": 1}, 1000);
+});
+
+$("#btPrepend").click(function(){
+	var r = $(".stage").prepend('<div class="p-3 bg-success">prepend();</div>');
+	console.log(r);
+});
+
+$("#btPrependTo").click(function(){
+	var r = $('<div class="p-3 bg-success">prependTo();</div>').prependTo(".stage");
+	console.log(r);
+});

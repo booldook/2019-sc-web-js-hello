@@ -1,0 +1,1 @@
+// $("#scoreModal").modal();

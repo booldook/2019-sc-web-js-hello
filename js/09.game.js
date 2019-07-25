@@ -14,23 +14,31 @@ var cnt;
 
 //초기화
 $("#btReset").click(function(){
+	// #btStart 안보이고, #btInit 보이고, #cnt value='4'로 만들고, .stage의 .player를 지우고, #scoreModal .modal-body안을 지운다.
 	$("#btInit").removeClass("d-none");
 	$("#btStart").addClass("d-none");
+	$("#cnt").removeClass("d-none");
 	$("#cnt").val('4');
 	$(".stage").empty();
 	$("#scoreModal .modal-body").empty();
 });
 
-
+// 준비
 $("#btInit").click(function(){
-	// 난 안보이고, #btStart 보이고, #cnt갯수만큼 player 생성
+	// #btInit 안보이고, #btStart 보이고, #cnt갯수만큼 .player 생성
 	$("#btInit").addClass("d-none");
 	$("#btStart").removeClass("d-none");
-	cnt = $("#cnt").val();
+	cnt = $("#cnt").val();	// input의 value값을 전역변수 cnt에 저장한다.
+	$("#cnt").addClass("d-none");
 	for(var i=0; i<cnt; i++) $(".stage").append(playerPrev + (i+1) + playerNext);
 });
 
+// 시작
+// #cnt의 갯수만큼 생성된 .player가 동시에 animate()된다. 단 속도는 2초부터 2.5초 사이에 움직인다.
+//마지막 .player의 animate() 종료 시점에서 #scoreModal을 modal()한다. 단 각각의 .player가 animate()가 종료될때 마다 .player의 .badge 안의 숫자를 .modal-body에 h3태그로 등록한다.
+
 $("#btStart").click(function(){
+	$(this).addClass("d-none");
 	var speed;
 	for(var i=0; i<cnt; i++) {
 		speed = Math.floor(Math.random() * 500 + 2000);
@@ -41,3 +49,4 @@ $("#btStart").click(function(){
 		});
 	}
 });
+

@@ -27,3 +27,42 @@ for(var i=1, sum=0; i<=10; i++) {
 	sum += i;
 }
 console.log(sum);
+
+// 초기화
+$("#btReset").click(function(){
+	$(".box-tree").empty();
+	$(".boxes").empty();
+});
+
+// 트리만들기
+$("#btTree").click(function(){
+	var asterisk = '';
+	
+	for(var i=0; i<10; i++) {
+		asterisk += '*';
+		$(".box-tree").append('<div>'+asterisk+'</div>');
+	}
+	for(i=0; i<3; i++) {
+		$(".box-tree").append('<div>**</div>');
+	}
+	
+	/* for(var i=0; i<13; i++) {
+		asterisk += '*';
+		if(i > 9) $(".box-tree").append('<div>**</div>');
+		else $(".box-tree").append('<div>'+asterisk+'</div>');
+	} */
+});
+
+
+// 박스만들기
+$("#btBox").click(function(){
+	var box = '<div class="box float-left border border-success bg-warning" style="width: 30px; height: 30px;"></div>';
+	for(var i=0; i<2000; i++) {
+		$(".boxes").append(box);
+	}
+	$(".box").mouseenter(function(){
+		$(this).stop().animate({"opacity":0}, 300, function(){
+			$(this).animate({"opacity": 1}, 2000);
+		});
+	});
+});

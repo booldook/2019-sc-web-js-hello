@@ -32,6 +32,8 @@ console.log(sum);
 $("#btReset").click(function(){
 	$(".box-tree").empty();
 	$(".boxes").empty();
+	//$(".tb-gugudan").html('<thead></thead><tbody></tbody>');
+	$(".tb-gugudan thead, .tb-gugudan tbody").empty();
 });
 
 // 트리만들기
@@ -65,4 +67,19 @@ $("#btBox").click(function(){
 			$(this).animate({"opacity": 1}, 2000);
 		});
 	});
+});
+
+// 구구단 만들기
+$("#btGugudan").click(function(){
+	$(".tb-gugudan thead").append('<tr></tr>');
+	for(var i=2; i<=9; i++) {
+		$(".tb-gugudan thead tr").append('<th>'+i+'단</th>');
+	}
+	for(i=1; i<=9; i++) {
+		$(".tb-gugudan tbody").append('<tr>');
+		for(var j=2; j<=9; j++) {
+			$(".tb-gugudan tbody").append('<td>'+j+' * '+i+' = '+(i * j)+'</td>');
+		}
+		$(".tb-gugudan tbody").append('</tr>');
+	}
 });

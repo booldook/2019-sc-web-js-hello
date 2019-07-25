@@ -19,15 +19,22 @@
 	<div class="container">
 		<div class="alert alert-secondary my-3 p-2">
 			<h4 class="d-flex align-items-center">
-				<img src="../img/char.png" alt="제목" style="width: 60px;" class="mx-3">
+				<img src="../img/char.png" style="width: 60px;" class="mx-3">
 				누가누가 잘 뛰나?
 			</h4>
 		</div>
-		<div class="border border-success my-3 p-3 form-inline">
+		<div class="border border-primary my-3 p-3 form-inline">
 			<input type="number" id="cnt" min="2" max="100" value="4" class="form-control mr-2">
 			<button class="btn btn-success mr-2">준비</button>
-			<button class="btn btn-primary mr-2">시작</button>
+			<button class="btn btn-primary mr-2 d-none">시작</button>
 			<button class="btn btn-danger">초기화</button>
+		</div>
+		<div class="stage border border-primary my-3 p-3 position-relative">
+			<div class="position-relative" style="width: 90px;">
+				<div class="badge badge-dark rounded px-2 position-absolute" 
+				style="right: 0;">1</div>
+				<img src="../img/char.png" class="w-100">
+			</div>
 		</div>
 	</div>
 	<script src="../js/09.game.js"></script>

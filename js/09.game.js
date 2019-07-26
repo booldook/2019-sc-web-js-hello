@@ -38,14 +38,18 @@ $("#btInit").click(function(){
 //마지막 .player의 animate() 종료 시점에서 #scoreModal을 modal()한다. 단 각각의 .player가 animate()가 종료될때 마다 .player의 .badge 안의 숫자를 .modal-body에 h3태그로 등록한다.
 
 $("#btStart").click(function(){
-	$(this).addClass("d-none");
+	$("#btStart").addClass("d-none");
+	$("#btReset").addClass("d-none");
 	var speed;
 	for(var i=0; i<cnt; i++) {
 		speed = Math.floor(Math.random() * 500 + 2000);
 		$(".player").eq(i).stop().animate({"left":"90%"}, speed, function(){
 			var myNumber = $(this).find(".badge").html();
 			var $h3 = $('<h3>'+myNumber+'번</h3>').appendTo("#scoreModal .modal-body");
-			if($h3.index() == cnt -1) $("#scoreModal").modal();
+			if($h3.index() == cnt -1) {
+				$("#scoreModal").modal();
+				$("#btReset").removeClass("d-none");
+			}
 		});
 	}
 });

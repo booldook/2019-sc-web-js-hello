@@ -1,0 +1,3 @@
+.banner {overflow: hidden; position: relative;}
+.slides {position: relative; width: 100%;}
+.slide {position: absolute; top: 0; width: 100%;}

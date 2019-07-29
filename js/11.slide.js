@@ -76,3 +76,14 @@ var ban4 = setInterval(function(){
 		else i4++;
 	});
 }, 3000);
+
+/* banner5 */
+var i5 = 0;
+var depth = 10;
+var ban5 = setInterval(function(){
+	$(".banner5 .slide").eq(i5).css({"z-index": depth++, "opacity": 0})
+	.stop().animate({"opacity": 1}, 500, function(){
+		if(i5 == 4) i5 = 0;
+		else i5++;
+	});
+}, 3000);

@@ -55,3 +55,24 @@ var ban2 = setInterval(function(){
 		else i2++;
 	});
 }, 3000);
+
+/* banner 3 */
+var i3 = 1;
+var ban3 = setInterval(function(){
+	$(".banner3 .slides").stop().animate({"top": -(i3*100)+"%"}, 500, function(){
+		if(i3 == 4) i3 = 0;
+		else i3++;
+	});
+}, 3000);
+
+/* banner 4 */
+var i4 = 1;
+var ban4 = setInterval(function(){
+	$(".banner4 .slides").stop().animate({"top": -(i4*100)+"%"}, 500, function(){
+		if(i4 == 5) {
+			$(this).css({"top": 0});
+			i4 = 1;
+		}
+		else i4++;
+	});
+}, 3000);

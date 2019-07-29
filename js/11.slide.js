@@ -38,7 +38,20 @@ var intervalRefresh = setInterval(function(){
 /* .banner1 */
 var i = 1;
 var ban1 = setInterval(function(){
-	$(".banner1 > .slides").stop().animate({"left": (-(i++)*100)+"%"}, 500, function(){
-		if(i == 5) i = 0;
+	$(".banner1 > .slides").stop().animate({"left": (-i*100)+"%"}, 500, function(){
+		if(i == 4) i = 0;
+		else i++;
+	});
+}, 3000);
+
+/* .banner2 */
+var i2 = 1;
+var ban2 = setInterval(function(){
+	$(".banner2 .slides").stop().animate({"left":-(i2*100)+"%"}, function(){
+		if(i2 == 5) {
+			$(this).css({"left": 0});
+			i2 = 1;
+		}
+		else i2++;
 	});
 }, 3000);

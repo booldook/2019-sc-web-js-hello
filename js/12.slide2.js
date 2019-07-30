@@ -42,11 +42,8 @@ $(객체-여러개).each(function(index){
 });
 */
 
-
-
-
 // 반복, 움직임
-interval = setInterval(function(){
+function slideShow(){
 	$(".slides").stop().animate({"left": -(now*100)+"%"}, speed, function(){
 		$(".pager > li").removeClass("cir-sel").addClass("cir");
 		if(now == slides.length - 1) {
@@ -59,4 +56,13 @@ interval = setInterval(function(){
 			now++;
 		}
 	});
-}, gap);
+}
+interval = setInterval(slideShow, gap);
+
+// Event - 마우스를 배너에 올리면 배너의 setInterval이 멈춘다. 마우스를 내리면 다시 setInterval이 작동한다.
+$(".slides").mouseenter(function(){
+	clearInterval(interval);
+});
+$(".slides").mouseleave(function(){
+	interval = setInterval(slideShow, gap);
+}); 

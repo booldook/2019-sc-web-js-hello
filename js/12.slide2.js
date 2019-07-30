@@ -66,3 +66,9 @@ $(".slides").mouseenter(function(){
 $(".slides").mouseleave(function(){
 	interval = setInterval(slideShow, gap);
 }); 
+
+// Event - pager > li를 클릭하면 원하는 페이지로 이동한다.
+$(".pager > li").click(function(){
+	now = $(this).index();
+	slideShow();
+});

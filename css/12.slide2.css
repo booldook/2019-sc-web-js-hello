@@ -2,6 +2,7 @@ html,body {height: 5000px;}
 .banner {overflow: hidden; position: relative;}
 .slides  {position: relative; width: 100%;}
 .slides2 {position: relative; width: 100%;}
+.slides3 {position: absolute; width: 100%;}
 .slides  > .slide {position: absolute; top: 0; width: 100%;}
 .slides2 > .slide {position: absolute; top: 0; width: 100%;}
 .pager {width: 100%; display: flex; justify-content: center; align-items: center; position: absolute; bottom: 5%; z-index:9999;}

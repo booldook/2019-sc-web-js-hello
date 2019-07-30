@@ -31,8 +31,8 @@ var slides = [
 		// obj = $(html).appendTo('.slides');
 		// obj.css({"left": (i*100)+"%"});
 		$('.slides').append(html);
-		if(i == 0) $(".pager").append('<li class="cir-sel"></li>');
-		else if(i < slides.length-1) $(".pager").append('<li class="cir"></li>');
+		if(i == 0) $(".pager1").append('<li class="cir-sel"></li>');
+		else if(i < slides.length-1) $(".pager1").append('<li class="cir"></li>');
 	}
 	$(".slide").each(function(i){
 		$(this).css({"left": (i*100)+"%"});
@@ -54,14 +54,14 @@ var slides = [
 	// 반복, 움직임
 	function slideShow(){
 		$(".slides").stop().animate({"left": -(now*100)+"%"}, speed, function(){
-			$(".pager > li").removeClass("cir-sel").addClass("cir");
+			$(".pager1 > li").removeClass("cir-sel").addClass("cir");
 			if(now == slides.length - 1) {
 				$(this).css({"left": 0});
-				$(".pager > li").eq(0).removeClass("cir").addClass("cir-sel");
+				$(".pager1 > li").eq(0).removeClass("cir").addClass("cir-sel");
 				now = 1;
 			}
 			else {
-				$(".pager > li").eq(now).removeClass("cir").addClass("cir-sel");
+				$(".pager1 > li").eq(now).removeClass("cir").addClass("cir-sel");
 				now++;
 			}
 		});
@@ -77,14 +77,29 @@ var slides = [
 	}); 
 
 	// Event - pager > li를 클릭하면 원하는 페이지로 이동한다.
-	$(".pager > li").click(function(){
+	$(".pager1 > li").click(function(){
 		now = $(this).index();
 		slideShow();
 	});
 }());
 
 // 페이드 슬라이드
+(function(){
+	// 전역변수 선언
+	var interval;
+	var speed = 500;
+	var gap = 3000;
+	var html;
 
+	// 초기화
+	init();
+	function init() {
+		for(var i in slides) {
+
+		}
+	}
+	
+}());
 
 
 

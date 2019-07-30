@@ -11,8 +11,7 @@ var slides = [
 	{"src": "../img/p2.png", "link":"#"},
 	{"src": "../img/p3.png", "link":"#"},
 	{"src": "../img/p4.png", "link":"#"},
-	{"src": "../img/p5.png", "link":"#"},
-	{"src": "../img/p1.png", "link":"#"}
+	{"src": "../img/p5.png", "link":"#"}
 ];
 
 // 가로슬라이드
@@ -26,16 +25,17 @@ var slides = [
 	var html;
 
 	// 초기화
+	// obj = $(html).appendTo('.slides');
+	// obj.css({"left": (i*100)+"%"});
 	for(var i in slides) {
 		html = '<div class="slide"><img src="'+slides[i].src+'" class="w-100"></div>';
-		// obj = $(html).appendTo('.slides');
-		// obj.css({"left": (i*100)+"%"});
 		$('.slides').append(html);
-		if(i == 0) $(".pager1").append('<li class="cir-sel"></li>');
-		else if(i < slides.length-1) $(".pager1").append('<li class="cir"></li>');
 	}
+	$('.slides').append($(".slide").eq(0).clone());
 	$(".slide").each(function(i){
 		$(this).css({"left": (i*100)+"%"});
+		if(i == 0) $(".pager1").append('<li class="cir-sel"></li>');
+		else if(i < slides.length) $(".pager1").append('<li class="cir"></li>');
 	});
 	/*
 	반복문 - Javascript
@@ -55,7 +55,7 @@ var slides = [
 	function slideShow(){
 		$(".slides").stop().animate({"left": -(now*100)+"%"}, speed, function(){
 			$(".pager1 > li").removeClass("cir-sel").addClass("cir");
-			if(now == slides.length - 1) {
+			if(now == slides.length) {
 				$(this).css({"left": 0});
 				$(".pager1 > li").eq(0).removeClass("cir").addClass("cir-sel");
 				now = 1;
@@ -95,7 +95,8 @@ var slides = [
 	init();
 	function init() {
 		for(var i in slides) {
-
+			html = '<li class="slide"><img src="'+slides[i].src+'" class="w-100"></li>';
+			$(".slides2").append(html);
 		}
 	}
 	

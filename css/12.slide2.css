@@ -4,7 +4,7 @@ html,body {height: 5000px;}
 .slides2 {position: relative; width: 100%;}
 .slides  > .slide {position: absolute; top: 0; width: 100%;}
 .slides2 > .slide {position: absolute; top: 0; width: 100%;}
-.pager {width: 100%; display: flex; justify-content: center; align-items: center; position: absolute; bottom: 5%;}
+.pager {width: 100%; display: flex; justify-content: center; align-items: center; position: absolute; bottom: 5%; z-index:9999;}
 .pager > li {height: 16px; border-radius: 8px; border: 3px solid #dd637b; margin: 0 5px; cursor: pointer;}
 .pager > .cir {width: 16px;}
 .pager > .cir-sel {width: 32px; border-color: crimson; background-color: #dd637b}

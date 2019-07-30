@@ -3,8 +3,6 @@
 	console.log("함수실행");
 }());
 
-
-
 // 데이터
 var slides = [
 	{"src": "../img/p1.png", "link":"#"},
@@ -31,8 +29,8 @@ var slides = [
 		html = '<div class="slide"><img src="'+slides[i].src+'" class="w-100"></div>';
 		$('.slides').append(html);
 	}
-	$('.slides').append($(".slide").eq(0).clone());
-	$(".slide").each(function(i){
+	$('.slides').append($(".slides > .slide").eq(0).clone());
+	$(".slides > .slide").each(function(i){
 		$(this).css({"left": (i*100)+"%"});
 		if(i == 0) $(".pager1").append('<li class="cir-sel"></li>');
 		else if(i < slides.length) $(".pager1").append('<li class="cir"></li>');
@@ -89,7 +87,10 @@ var slides = [
 	var interval;
 	var speed = 500;
 	var gap = 3000;
+	var depth = 10;
+	var now = 1;
 	var html;
+	var $slide;
 
 	// 초기화
 	init();
@@ -98,8 +99,41 @@ var slides = [
 			html = '<li class="slide"><img src="'+slides[i].src+'" class="w-100"></li>';
 			$(".slides2").append(html);
 		}
+		$(".slides2 > .slide").each(function(i){
+			if(i == 0) {
+				$(this).css({"z-index": depth++});
+				$(".pager2").append('<li class="cir-sel"></li>');
+			}
+			else $(".pager2").append('<li class="cir"></li>');
+		});
+		$slide = $(".slides2 > .slide");
 	}
 	
+	// 반복 동작 함수
+	function slideShow() {
+		$slide.eq(now).css({"z-index":depth++, "opacity": 0});
+		$slide.eq(now).stop().animate({"opacity": 1}, speed, function(){
+			$(".pager2 > li").removeClass("cir-sel").addClass("cir");
+			$(".pager2 > li").eq(now).removeClass("cir").addClass("cir-sel");
+			if(now == slides.length - 1) now = 0;
+			else now++;
+		});
+	}
+	interval = setInterval(slideShow, gap);
+
+	// Event
+	$(".slides2").mouseenter(function(){
+		clearInterval(interval);
+	});
+
+	$(".slides2").mouseleave(function(){
+		interval = setInterval(slideShow, gap);
+	});
+
+	$(".pager2 > li").click(function(){
+		now = $(this).index();
+		slideShow();
+	});
 }());
 
 

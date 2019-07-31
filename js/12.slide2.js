@@ -1,7 +1,23 @@
 // IIFE (즉시실행함수)
+/*
 (function () {
 	console.log("함수실행");
 }());
+*/
+
+
+// jQuery Dimensions
+/*
+console.log("height() : " + $(".box").height());
+console.log("width() : " + $(".box").width());
+console.log("innerHeight() : " + $(".box").innerHeight());
+console.log("innerWidth() : " + $(".box").innerWidth());
+console.log("outerHeight() : " + $(".box").outerHeight());
+console.log("outerWidth() : " + $(".box").outerWidth());
+console.log("outerHeight(true) : " + $(".box").outerHeight(true));
+console.log("outerWidth(true) : " + $(".box").outerWidth(true));
+*/
+
 
 // 데이터
 var slides = [
@@ -11,6 +27,11 @@ var slides = [
 	{"src": "../img/p4.png", "link":"#"},
 	{"src": "../img/p5.png", "link":"#"}
 ];
+
+// resize() 이벤트
+$(window).resize(function(){
+	
+});
 
 // 가로슬라이드
 (function () {
@@ -35,6 +56,15 @@ var slides = [
 		if(i == 0) $(".pager1").append('<li class="cir-sel"></li>');
 		else if(i < slides.length) $(".pager1").append('<li class="cir"></li>');
 	});
+
+	$(window).resize(function(){
+		$(".slides").parent().outerHeight($(".slides > .slide").eq(0).outerHeight());
+	});
+	$(".slides").imagesLoaded(function(){
+		$(window).trigger("resize");
+	});
+
+	
 	/*
 	반복문 - Javascript
 	for(var i=0; i<10; i++) {
@@ -107,6 +137,14 @@ var slides = [
 			else $(".pager2").append('<li class="cir"></li>');
 		});
 		$slide = $(".slides2 > .slide");
+
+		$(window).resize(function(){
+			$(".slides2").parent().outerHeight($(".slides2 > .slide").eq(0).outerHeight());
+		});
+
+		$(".slides2").imagesLoaded(function(){
+			$(window).trigger("resize");
+		});
 	}
 	
 	// 반복 동작 함수
@@ -153,6 +191,14 @@ var slides = [
 				$(this).parent().append($(this).clone());
 			}
 			else $(".pager3").append('<li class="cir"></li>');
+		});
+		
+		$(window).resize(function(){
+			$(".slides3").parent().outerHeight($(".slides3 > .slide").eq(0).outerHeight());
+		});
+
+		$(".slides3").imagesLoaded(function(){
+			$(window).trigger("resize");
 		});
 	}
 	function slideShow() {

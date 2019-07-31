@@ -1,5 +1,7 @@
 html,body {height: 5000px;}
-.banner {overflow: hidden; position: relative;}
+.box {margin: 30px; padding: 40px; border: 20px solid red; width: 300px; height: 300px;}
+
+.banner {position: relative; overflow: hidden;}
 .slides  {position: relative; width: 100%;}
 .slides2 {position: relative; width: 100%;}
 .slides3 {position: absolute; width: 100%; top: 0;}
@@ -9,3 +11,5 @@ html,body {height: 5000px;}
 .pager > li {height: 16px; border-radius: 8px; border: 3px solid #dd637b; margin: 0 5px; cursor: pointer;}
 .pager > .cir {width: 16px;}
 .pager > .cir-sel {width: 32px; border-color: crimson; background-color: #dd637b}
+
+

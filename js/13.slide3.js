@@ -10,7 +10,7 @@ var slides = [
 	{src: "../img/prd8.png"}
 ];
 
-var now = 0;														//  맨 처음 .slide의 index
+var now = 0;														// 맨 처음 .slide의 index
 var end = slides.length - 1;						// 마지막 .slide의 index
 var dir = "R";													// 움직이는 방향 L / R
 var tar; 																// 움직임 목표값 L:-50% / R:0

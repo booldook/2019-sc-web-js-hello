@@ -9,6 +9,23 @@ $("#btList").click(function(){
 	});
 });
 
+$("#btSave").click(function(){
+	$.ajax({
+		url: "https://webmir.co.kr/score/score_in.php",
+		type: "post",
+		dataType: "json",
+		data: {
+			stdname: "임덕규",
+			kor: 90,
+			eng: 80,
+			math: 85
+		},
+		success: function(res){
+			console.log(res);
+		}
+	});
+});
+
 // json - 데이터를 전송하기 위한 변수의 집합
 var json = {
 	"left": "100px",

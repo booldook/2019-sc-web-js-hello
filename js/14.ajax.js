@@ -5,6 +5,9 @@ $("#btList").click(function(){
 		dataType: "json",
 		success: function(res){
 			console.log(res);
+		},
+		error: function(xhr, stat, err){
+			console.log(xhr, stat, err);
 		}
 	});
 });
@@ -22,6 +25,9 @@ $("#btSave").click(function(){
 		},
 		success: function(res){
 			console.log(res);
+		},
+		error: function(xhr, stat, err){
+			console.log(xhr, stat, err);
 		}
 	});
 });
